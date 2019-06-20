@@ -1,0 +1,6 @@
+[submodule "micropython-waveshare-epaper"]
+	path = micropython-waveshare-epaper
+	url = https://github.com/mcauser/micropython-waveshare-epaper
+[submodule "uQR"]
+	path = uQR
+	url = https://github.com/JASchilz/uQR
