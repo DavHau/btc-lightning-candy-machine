@@ -41,4 +41,5 @@ def main():
         if ln_invoice.expired:
             ln_invoice = new_invoice()
 
+
 main()
