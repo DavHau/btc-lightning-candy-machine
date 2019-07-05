@@ -1,5 +1,5 @@
 import webrepl
-from .settings import wifi_network, wifi_password
+from settings import wifi_network, wifi_password
 
 
 def do_connect():

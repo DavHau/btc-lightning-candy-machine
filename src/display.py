@@ -1,9 +1,10 @@
-from uQR import QRCode
-import epaper1in54
-from machine import SPI
-from machine import Pin
 import gc
 
+import epaper1in54
+from machine import Pin
+from machine import SPI
+from uQR import QRCode
+from settings import Pins
 
 black = 0
 white = 1
@@ -15,11 +16,11 @@ y = 0
 
 class PaperDisplay2:
     def __init__(self):
-        spi = SPI(baudrate=100000, polarity=1, phase=0, sck=Pin(14), mosi=Pin(13), miso=Pin(16))
-        cs = Pin(15, Pin.OUT)
-        dc = Pin(32, Pin.OUT)
-        rst = Pin(2, Pin.OUT)
-        busy = Pin(0, Pin.OUT)
+        spi = SPI(baudrate=100000, polarity=1, phase=0, sck=Pin(Pins.sck), mosi=Pin(Pins.mosi), miso=Pin(Pins.miso))
+        cs = Pin(Pins.cs, Pin.OUT)
+        dc = Pin(Pins.dc, Pin.OUT)
+        rst = Pin(Pins.rst, Pin.OUT)
+        busy = Pin(Pins.busy, Pin.OUT)
         self.display = epaper1in54.EPD(spi, cs, dc, rst, busy)
         self.display.init()
         self.color = black

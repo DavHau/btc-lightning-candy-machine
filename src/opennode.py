@@ -1,6 +1,6 @@
 import urequests, json
 from unixtime import unixtime
-from .settings import opennode_api_key
+from settings import opennode_api_key
 
 
 class LightningInvoice:

@@ -3,10 +3,11 @@ from time import sleep
 import display as dp
 from machine import Pin
 
-from .opennode import LightningInvoice
+from opennode import LightningInvoice
+from settings import Pins
 
 price_sat = 100
-candy_pin = Pin(10, Pin.OUT)
+candy_pin = Pin(Pins.candy, Pin.OUT)
 candy_pin.off()
 
 display = dp.PaperDisplay2()
@@ -33,7 +34,7 @@ def main():
     while True:
         sleep(0.2)
         if ln_invoice.paid:
-            print('CAAANDDYYYYY!!!!!!')
+            print('Enjoy The Candy!')
             give_candy()
             display.clear(True)
             ln_invoice = new_invoice()
